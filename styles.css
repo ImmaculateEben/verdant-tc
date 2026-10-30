@@ -11,6 +11,7 @@ body {
   background-color: #faf7ee;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   font-family: "DM Sans", sans-serif;
   padding: 20px;
 }
@@ -80,6 +81,7 @@ body {
   align-items: center;
   background-color: white;
   border-radius: 20px;
+  white-space: nowrap;
 }
 .basket-button {
   border: none;
@@ -92,6 +94,7 @@ body {
   border-radius: 20px;
   color: white;
   font-family: "DM Sans", sans-serif;
+  white-space: nowrap;
 }
 
 @media (max-width: 1000px) {
@@ -101,6 +104,14 @@ body {
 
   .nav-lists {
     display: none;
+  }
+
+  .header-group-1 {
+    gap: 0;
+  }
+
+  .header-group-2 {
+    gap: 10px;
   }
 }
 
@@ -133,6 +144,8 @@ body {
   flex-direction: column;
   gap: 20px;
   flex: 1;
+  min-width: 0;
+  container-type: inline-size;
 }
 .hero-text-message {
   display: flex;
@@ -176,10 +189,13 @@ body {
   align-items: center;
   padding: 5px 5px 5px 15px;
   border-radius: 30px;
+  max-width: 100%;
 }
 
 .hero-input-group input {
   border: none;
+  flex: 1;
+  min-width: 0;
 }
 .hero-input-group input:focus {
   outline: none;
@@ -192,6 +208,8 @@ body {
   border-radius: 30px;
   color: white;
   font-family: "DM Sans", sans-serif;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .hero-input-group input::placeholder {
@@ -244,6 +262,18 @@ body {
 
 .review-box span {
   color: #6f6a5c;
+}
+
+/* Stack the ratings row when the hero text column gets narrow */
+@container (max-width: 420px) {
+  .ratings {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .review-box {
+    border-left: none;
+    padding-left: 0;
+  }
 }
 .image-wrapper {
   height: 415px;
