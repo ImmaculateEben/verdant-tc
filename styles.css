@@ -103,15 +103,21 @@ body {
   }
 
   .nav-lists {
+    gap: 20px;
+  }
+
+  .header-group-2 {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-lists {
     display: none;
   }
 
   .header-group-1 {
     gap: 0;
-  }
-
-  .header-group-2 {
-    gap: 10px;
   }
 }
 
@@ -170,6 +176,7 @@ body {
   font-family: "Source Serif 4", serif;
   font-size: 60px;
   font-weight: 400;
+  line-height: 1.1;
 }
 .hero-paragraph {
   color: #6f6a5c;
@@ -276,20 +283,23 @@ body {
   }
 }
 .image-wrapper {
-  height: 415px;
-  width: 478px;
+  width: 100%;
+  max-width: 478px;
   border: 1px solid #e3decb;
   padding: 11px;
   border-radius: 26px;
   position: relative;
 }
 .harvest-image {
-  height: 87%;
+  display: block;
   width: 100%;
+  aspect-ratio: 456 / 341;
+  object-fit: cover;
 }
 .image-content {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 .image-content-first-group > h6 {
   color: #1f2e24;
@@ -361,7 +371,7 @@ body {
   padding: 10px 13px;
   position: absolute;
   bottom: 60px;
-  right: -20px;
+  right: -10px;
 }
 
 .badge-2 .badge-2-icon {
@@ -385,12 +395,11 @@ body {
 }
 
 @media (max-width: 1000px) {
-  .image-wrapper {
-    width: 300px;
-    height: 290px;
-  }
   .hero-container {
     gap: 30px;
+  }
+  .hero-heading {
+    font-size: 44px;
   }
 }
 
@@ -445,7 +454,7 @@ body {
 
 @media (max-width: 900px) {
   .aisles-cards-wrapper {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (max-width: 600px) {
@@ -463,11 +472,14 @@ body {
   border: 1px solid #e3decb;
   border-radius: 12px;
   gap: 10px;
+  overflow: hidden;
 }
 
 .aisles-card > img {
+  display: block;
   width: 100%;
   height: 160px;
+  object-fit: cover;
 }
 
 .aisles-card-content {
@@ -681,9 +693,12 @@ body {
   gap: 15px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .promos {
     grid-template-columns: 1fr;
+  }
+  .deal-card {
+    min-height: auto;
   }
 }
 
